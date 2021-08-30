@@ -61,7 +61,9 @@ namespace SIS.HTTP
                 var response = new HttpResponse(HttpResponseCode.Ok, stringContent);
                 response.Headers.Add(new Header ("Server", "KrumServer 1.0"));
                 response.Headers.Add(new Header("Content-Type", "text/html"));
-                
+                response.Cookies.Add(
+                    new ResponseCookie("sid", Guid.NewGuid().ToString())
+                    {HttpOnly = true, MaxAge = 3600, });
 
                 byte[] responseBytes = Encoding.UTF8.GetBytes(response.ToString());
 
