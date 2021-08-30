@@ -43,9 +43,8 @@ namespace SIS.HTTP
 
         private async Task ProcessClientAsynk(TcpClient tcpClient)
         {
-
-
-            using (NetworkStream networkSream = tcpClient.GetStream())
+            using NetworkStream networkSream = tcpClient.GetStream();
+            try
             {
                 byte[] requestBytes = new byte[1000000];
                 int bytesRead = await networkSream.ReadAsync(requestBytes, 0, requestBytes.Length);
@@ -57,13 +56,13 @@ namespace SIS.HTTP
                 {
                     content = "<h1> Home Page </h1>";
                 }
-                byte [] stringContent = Encoding.UTF8.GetBytes(content);
+                byte[] stringContent = Encoding.UTF8.GetBytes(content);
                 var response = new HttpResponse(HttpResponseCode.Ok, stringContent);
-                response.Headers.Add(new Header ("Server", "KrumServer 1.0"));
+                response.Headers.Add(new Header("Server", "KrumServer 1.0"));
                 response.Headers.Add(new Header("Content-Type", "text/html"));
                 response.Cookies.Add(
                     new ResponseCookie("sid", Guid.NewGuid().ToString())
-                    {HttpOnly = true, MaxAge = 3600, });
+                    { HttpOnly = true, MaxAge = 3600, });
 
                 byte[] responseBytes = Encoding.UTF8.GetBytes(response.ToString());
 
@@ -73,7 +72,17 @@ namespace SIS.HTTP
                 Console.WriteLine(request);
 
                 Console.WriteLine(new string('=', 60));
-            };
+            }
+            catch (Exception ex)
+            {
+
+                var errorResponse = new HttpResponse(HttpResponseCode.InernalServerError, Encoding.UTF8.GetBytes(ex.ToString()));
+                errorResponse.Headers.Add(new Header("Content-Type", "text/plain"));
+                byte[] responseBytes = Encoding.UTF8.GetBytes(errorResponse.ToString());
+                await networkSream.WriteAsync(responseBytes, 0, responseBytes.Length);
+                await networkSream.WriteAsync(errorResponse.Body, 0, errorResponse.Body.Length);
+            }
+      
         }
     }
 }
