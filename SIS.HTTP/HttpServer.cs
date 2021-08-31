@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Net;
 using System.Net.Sockets;
 using System.Text;
@@ -10,12 +12,12 @@ namespace SIS.HTTP
     public class HttpServer : IHttpServer
     {
         private readonly TcpListener tcpListener;
+        private readonly IList<Route> routeTable;
 
-        public HttpServer(int port)
+        public HttpServer(int port, IList<Route> routeTable)
         {
-             this.tcpListener = new TcpListener(IPAddress.Loopback, port);
-            
-
+            this.tcpListener = new TcpListener(IPAddress.Loopback, port);
+            this.routeTable = routeTable;
         }
         public async Task ResetAsynk()
         {
@@ -50,16 +52,19 @@ namespace SIS.HTTP
                 int bytesRead = await networkSream.ReadAsync(requestBytes, 0, requestBytes.Length);
                 string requestAsString = Encoding.UTF8.GetString(requestBytes, 0, bytesRead);
                 var request = new HttpRequest(requestAsString);
-                string content = "<h1> Hello Header </h1>";
+                var route = this.routeTable.FirstOrDefault(x => x.HttpMethod == request.Method && x.Path == request.Path);
+                HttpResponse response;
 
-                if (request.Path == "/home")
+                if (route == null)
                 {
-                    content = "<h1> Home Page </h1>";
+                    response = new HttpResponse(HttpResponseCode.NotFound, new byte[0]);
                 }
-                byte[] stringContent = Encoding.UTF8.GetBytes(content);
-                var response = new HttpResponse(HttpResponseCode.Ok, stringContent);
+
+                else
+                {
+                    response = route.Action(request);
+                }
                 response.Headers.Add(new Header("Server", "KrumServer 1.0"));
-                response.Headers.Add(new Header("Content-Type", "text/html"));
                 response.Cookies.Add(
                     new ResponseCookie("sid", Guid.NewGuid().ToString())
                     { HttpOnly = true, MaxAge = 3600, });
