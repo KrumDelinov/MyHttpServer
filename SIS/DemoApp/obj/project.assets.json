@@ -51,11 +51,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\SoftUni\\C#WEB\\WebBasic\\SIS\\DemoApp\\DemoApp.csproj",
+      "projectUniqueName": "D:\\SoftUni\\C#WEB\\WebBasic\\MyHttpServer\\SIS\\DemoApp\\DemoApp.csproj",
       "projectName": "DemoApp",
-      "projectPath": "D:\\SoftUni\\C#WEB\\WebBasic\\SIS\\DemoApp\\DemoApp.csproj",
+      "projectPath": "D:\\SoftUni\\C#WEB\\WebBasic\\MyHttpServer\\SIS\\DemoApp\\DemoApp.csproj",
       "packagesPath": "C:\\Users\\krumd\\.nuget\\packages\\",
-      "outputPath": "D:\\SoftUni\\C#WEB\\WebBasic\\SIS\\DemoApp\\obj\\",
+      "outputPath": "D:\\SoftUni\\C#WEB\\WebBasic\\MyHttpServer\\SIS\\DemoApp\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -74,8 +74,8 @@
       "frameworks": {
         "netcoreapp3.1": {
           "projectReferences": {
-            "D:\\SoftUni\\C#WEB\\WebBasic\\SIS\\SIS.MvcFramework\\SIS.MvcFramework.csproj": {
-              "projectPath": "D:\\SoftUni\\C#WEB\\WebBasic\\SIS\\SIS.MvcFramework\\SIS.MvcFramework.csproj"
+            "D:\\SoftUni\\C#WEB\\WebBasic\\MyHttpServer\\SIS\\SIS.MvcFramework\\SIS.MvcFramework.csproj": {
+              "projectPath": "D:\\SoftUni\\C#WEB\\WebBasic\\MyHttpServer\\SIS\\SIS.MvcFramework\\SIS.MvcFramework.csproj"
             }
           }
         }

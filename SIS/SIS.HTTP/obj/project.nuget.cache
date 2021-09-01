@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "PdLytSL7PATGF/Y2cDHzaLZVFXpjZ6rRRLjJzQTKtfI6EHjM4XiAfF2y3XGFoOpGM1Yd6m0UzB/pdSh1eGf7ag==",
+  "dgSpecHash": "54zDhSia1Q73OAOS+itM1ZG5RuxwlZXiaTw5Al5djjoiZC4B10GILj2EcERTSYVhqBEAPNL68DFVgOF9aajfcg==",
   "success": true,
-  "projectFilePath": "D:\\SoftUni\\C#WEB\\WebBasic\\SIS\\SIS.HTTP\\SIS.HTTP.csproj",
+  "projectFilePath": "D:\\SoftUni\\C#WEB\\WebBasic\\MyHttpServer\\SIS\\SIS.HTTP\\SIS.HTTP.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\krumd\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"

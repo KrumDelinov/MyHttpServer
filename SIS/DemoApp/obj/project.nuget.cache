@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "qLLuPMG/scCOkgYwJGlMQ19YXzQMfqlMTAtnXEj+LgZORbgbrMhRBN8kCyWNj3zGnS+FQbfprJZXRJvjbR+q8Q==",
+  "dgSpecHash": "jOGZGirG2ul8YxksnB0A4miMJBcR5SBY98Cpp+ijhddwxeAkEYceu0u7YS7sFChgFpkIroAX3L8swoCtVxwvpA==",
   "success": true,
-  "projectFilePath": "D:\\SoftUni\\C#WEB\\WebBasic\\SIS\\DemoApp\\DemoApp.csproj",
+  "projectFilePath": "D:\\SoftUni\\C#WEB\\WebBasic\\MyHttpServer\\SIS\\DemoApp\\DemoApp.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

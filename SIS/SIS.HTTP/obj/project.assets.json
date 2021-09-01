@@ -185,11 +185,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\SoftUni\\C#WEB\\WebBasic\\SIS\\SIS.HTTP\\SIS.HTTP.csproj",
+      "projectUniqueName": "D:\\SoftUni\\C#WEB\\WebBasic\\MyHttpServer\\SIS\\SIS.HTTP\\SIS.HTTP.csproj",
       "projectName": "SIS.HTTP",
-      "projectPath": "D:\\SoftUni\\C#WEB\\WebBasic\\SIS\\SIS.HTTP\\SIS.HTTP.csproj",
+      "projectPath": "D:\\SoftUni\\C#WEB\\WebBasic\\MyHttpServer\\SIS\\SIS.HTTP\\SIS.HTTP.csproj",
       "packagesPath": "C:\\Users\\krumd\\.nuget\\packages\\",
-      "outputPath": "D:\\SoftUni\\C#WEB\\WebBasic\\SIS\\SIS.HTTP\\obj\\",
+      "outputPath": "D:\\SoftUni\\C#WEB\\WebBasic\\MyHttpServer\\SIS\\SIS.HTTP\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
