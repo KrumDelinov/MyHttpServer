@@ -10,3 +10,15 @@ D:\SoftUni\C#WEB\WebBasic\SIS\SIS.MvcFramework\obj\Debug\netstandard2.0\SIS.MvcF
 D:\SoftUni\C#WEB\WebBasic\SIS\SIS.MvcFramework\obj\Debug\netstandard2.0\SIS.MvcFramework.csproj.CopyComplete
 D:\SoftUni\C#WEB\WebBasic\SIS\SIS.MvcFramework\obj\Debug\netstandard2.0\SIS.MvcFramework.dll
 D:\SoftUni\C#WEB\WebBasic\SIS\SIS.MvcFramework\obj\Debug\netstandard2.0\SIS.MvcFramework.pdb
+D:\SoftUni\C#WEB\WebBasic\MyHttpServer\SIS\SIS.MvcFramework\bin\Debug\netstandard2.0\SIS.MvcFramework.deps.json
+D:\SoftUni\C#WEB\WebBasic\MyHttpServer\SIS\SIS.MvcFramework\bin\Debug\netstandard2.0\SIS.MvcFramework.dll
+D:\SoftUni\C#WEB\WebBasic\MyHttpServer\SIS\SIS.MvcFramework\bin\Debug\netstandard2.0\SIS.MvcFramework.pdb
+D:\SoftUni\C#WEB\WebBasic\MyHttpServer\SIS\SIS.MvcFramework\bin\Debug\netstandard2.0\SIS.HTTP.dll
+D:\SoftUni\C#WEB\WebBasic\MyHttpServer\SIS\SIS.MvcFramework\bin\Debug\netstandard2.0\SIS.HTTP.pdb
+D:\SoftUni\C#WEB\WebBasic\MyHttpServer\SIS\SIS.MvcFramework\obj\Debug\netstandard2.0\SIS.MvcFramework.csprojAssemblyReference.cache
+D:\SoftUni\C#WEB\WebBasic\MyHttpServer\SIS\SIS.MvcFramework\obj\Debug\netstandard2.0\SIS.MvcFramework.AssemblyInfoInputs.cache
+D:\SoftUni\C#WEB\WebBasic\MyHttpServer\SIS\SIS.MvcFramework\obj\Debug\netstandard2.0\SIS.MvcFramework.AssemblyInfo.cs
+D:\SoftUni\C#WEB\WebBasic\MyHttpServer\SIS\SIS.MvcFramework\obj\Debug\netstandard2.0\SIS.MvcFramework.csproj.CoreCompileInputs.cache
+D:\SoftUni\C#WEB\WebBasic\MyHttpServer\SIS\SIS.MvcFramework\obj\Debug\netstandard2.0\SIS.MvcFramework.csproj.CopyComplete
+D:\SoftUni\C#WEB\WebBasic\MyHttpServer\SIS\SIS.MvcFramework\obj\Debug\netstandard2.0\SIS.MvcFramework.dll
+D:\SoftUni\C#WEB\WebBasic\MyHttpServer\SIS\SIS.MvcFramework\obj\Debug\netstandard2.0\SIS.MvcFramework.pdb
