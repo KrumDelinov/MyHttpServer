@@ -86,7 +86,7 @@ namespace SIS.HTTP
                 response.Headers.Add(new Header("Server", "KrumServer 1.0"));
 
                 
-                if (new)
+                if (newSesionId != null)
                 {
                     
                     response.Cookies.Add(

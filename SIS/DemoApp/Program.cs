@@ -8,16 +8,17 @@ using System.Threading.Tasks;
 
 namespace DemoApp
 {
-    class Program
+    public static class Program
     {
         //Test for GitHub
-        static async Task  Main(string[] args)
+        public static async Task  Main(string[] args)
         {
+            var db = new AplicatinDbContext();
+            db.Database.EnsureCreated();
+
             var routeTable = new List<Route>();
             routeTable.Add(new Route(HttpMethodType.Get, "/", Index));
-            routeTable.Add(new Route(HttpMethodType.Get, "/users/login", LogIn));
-            routeTable.Add(new Route(HttpMethodType.Post, "/users/login", DoLogIn));
-            routeTable.Add(new Route(HttpMethodType.Get, "/contact", Contact));
+            routeTable.Add(new Route(HttpMethodType.Post, "/Tweets/Create", CreateTweet));
             routeTable.Add(new Route(HttpMethodType.Get, "/favicon.ico", FavIcon));
             var httpServer = new HttpServer(80, routeTable);
 
@@ -30,25 +31,27 @@ namespace DemoApp
             return new FileResponse(byteContent, "image/x-icon");
         }
 
-        private static HttpResponse Contact(HttpRequest request)
-        {
-            return new HtmlResponse("<h1> Contacts </h1>");
-        }
 
         public static HttpResponse Index(HttpRequest request)
         {
-            return new HtmlResponse("<h1> Hello Header </h1>");
+            return new HtmlResponse("<form action='/Tweets/Create' method='post'><input name='creator' /><br /><textarea name='tweetName'></textarea><br /><input type='submit' /></form>");
         }
 
-        public static HttpResponse LogIn(HttpRequest request)
+        public static HtmlResponse CreateTweet(HttpRequest request)
         {
-            return new HtmlResponse("<h1> Login page </h1>");
+            var db = new AplicatinDbContext();
+            db.Add(new Tweet
+            {
+                CreatOn = DateTime.UtcNow,
+                Creator = request.FormData["creator"],
+                Content = request.FormData["tweetName"],
+            });
+
+            db.SaveChanges();
+            return new HtmlResponse("Ready");
         }
 
-        public static HttpResponse DoLogIn(HttpRequest request)
-        {
-            return new HtmlResponse("<h1> Login page </h1>");
-           
-        }
+
+
     }
 }
