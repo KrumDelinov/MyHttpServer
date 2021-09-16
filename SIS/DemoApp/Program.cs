@@ -3,6 +3,7 @@ using SIS.HTTP.Response;
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -34,10 +35,29 @@ namespace DemoApp
 
         public static HttpResponse Index(HttpRequest request)
         {
-            return new HtmlResponse("<form action='/Tweets/Create' method='post'><input name='creator' /><br /><textarea name='tweetName'></textarea><br /><input type='submit' /></form>");
+            var db = new AplicatinDbContext();
+            var tweets = db.Tweets.Select(x => new
+            {
+                x.CreatOn,
+                x.Creator,
+                x.Content,
+            }).ToList();
+
+            StringBuilder html = new StringBuilder();
+            html.Append("<table><tr><th>Data</th><th>Name</th><th>Tweet</th></tr>");
+
+            foreach (var item in tweets)
+            {
+                html.Append($"<tr><td>{item.CreatOn}</td><td>{item.Creator}</td><td>{item.Content}</td></tr>");
+            }
+            html.Append("</table>");
+            html.Append("<form action='/Tweets/Create' method='post'><input name='creator' /><br /><textarea name='tweetName'></textarea><br /><input type='submit' /></form>");
+            return new HtmlResponse(html.ToString());
+
+
         }
 
-        public static HtmlResponse CreateTweet(HttpRequest request)
+        public static HttpResponse CreateTweet(HttpRequest request)
         {
             var db = new AplicatinDbContext();
             db.Add(new Tweet
@@ -48,7 +68,7 @@ namespace DemoApp
             });
 
             db.SaveChanges();
-            return new HtmlResponse("Ready");
+            return new RedirectResponse("/");
         }
 
 
