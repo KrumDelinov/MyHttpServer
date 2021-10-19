@@ -1,12 +1,18 @@
-﻿using System;
+﻿using SIS.HTTP;
+using SIS.MvcFramework;
+using SulseApp.Controllers;
+using System;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace SulseApp
 {
-    class Program
+    public static class Program
     {
-        static void Main(string[] args)
+        public static async Task Main()
         {
-            Console.WriteLine("Hello World!");
+
+            await WebHost.StartAsync(new StartUp());
         }
     }
 }
